@@ -1,0 +1,40 @@
+class Solution {
+    public int[] shuffle(int[] nums,int n) {
+      int[] result=new int[2*n];
+      for(int i=0;i<n;i++){
+        result[i*2]=nums[i];
+        result[i*2+1]=nums[i+n];
+      }
+      return result;
+    }
+}
+
+
+(or)
+
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int[] array1=new int[n];
+        int[] array2=new int[n];
+        for(int i=0;i<n;i++){
+        array1[i]=nums[i];                        //first half
+        }
+        for(int i=n;i<nums.length;i++){       //second half
+        array2[i-n]=nums[i];
+        } 
+        int[] result =new int[n*2];               //new array size
+
+        for(int i=0;i<n;i++){
+           result[i*2]=array1[i];
+            result[i*2+1]=array2[i];
+        }
+        return result;
+    }
+}
+
+
+
+
+
+
+
